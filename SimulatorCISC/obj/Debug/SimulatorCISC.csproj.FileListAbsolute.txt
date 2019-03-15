@@ -1,0 +1,17 @@
+Y:\Coding\SimulatorCISC\SimulatorCISC\bin\Debug\SimulatorCISC.exe.config
+Y:\Coding\SimulatorCISC\SimulatorCISC\bin\Debug\SimulatorCISC.exe
+Y:\Coding\SimulatorCISC\SimulatorCISC\bin\Debug\SimulatorCISC.pdb
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\SimulatorCISC.csprojAssemblyReference.cache
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\MainWindow.g.cs
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\App.g.cs
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\SimulatorCISC_MarkupCompile.cache
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\SimulatorCISC_MarkupCompile.lref
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\MainWindow.baml
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\SimulatorCISC.g.resources
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\SimulatorCISC.Properties.Resources.resources
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\SimulatorCISC.csproj.GenerateResource.cache
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\SimulatorCISC.csproj.CoreCompileInputs.cache
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\SimulatorCISC.exe
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\SimulatorCISC.pdb
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\Diagram.g.cs
+Y:\Coding\SimulatorCISC\SimulatorCISC\obj\Debug\Diagram.baml

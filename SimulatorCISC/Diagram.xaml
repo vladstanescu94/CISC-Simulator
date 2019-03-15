@@ -1,0 +1,129 @@
+﻿<Window x:Class="SimulatorCISC.Diagram"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimulatorCISC"
+        mc:Ignorable="d"
+        Title="Diagram"  Height="700
+        " Width="1400">
+    <Grid>
+        <TextBox x:Name="tbR0" HorizontalAlignment="Left" Height="23" Margin="62,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblRegisters" Content="REGISTERS" HorizontalAlignment="Left" Margin="62,84,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="tbR1" HorizontalAlignment="Left" Height="23" Margin="62,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR2" HorizontalAlignment="Left" Height="23" Margin="62,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR3" HorizontalAlignment="Left" Height="23" Margin="62,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR4" HorizontalAlignment="Left" Height="23" Margin="62,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR5" HorizontalAlignment="Left" Height="23" Margin="62,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR6" HorizontalAlignment="Left" Height="23" Margin="62,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR7" HorizontalAlignment="Left" Height="23" Margin="62,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR8" HorizontalAlignment="Left" Height="23" Margin="62,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR9" HorizontalAlignment="Left" Height="23" Margin="62,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR10" HorizontalAlignment="Left" Height="23" Margin="62,395,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR11" HorizontalAlignment="Left" Height="23" Margin="62,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR12" HorizontalAlignment="Left" Height="23" Margin="62,451,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR13" HorizontalAlignment="Left" Height="23" Margin="62,479,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR14" HorizontalAlignment="Left" Height="23" Margin="62,507,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbR15" HorizontalAlignment="Left" Height="23" Margin="62,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblR" Content="R0" HorizontalAlignment="Left" Margin="23,115,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy" Content="R1" HorizontalAlignment="Left" Margin="23,143,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy1" Content="R2" HorizontalAlignment="Left" Margin="23,171,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy2" Content="R3" HorizontalAlignment="Left" Margin="23,199,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy3" Content="R4" HorizontalAlignment="Left" Margin="23,227,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy4" Content="R5" HorizontalAlignment="Left" Margin="23,255,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy5" Content="R6" HorizontalAlignment="Left" Margin="23,283,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy6" Content="R7" HorizontalAlignment="Left" Margin="23,311,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy7" Content="R8" HorizontalAlignment="Left" Margin="23,339,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy8" Content="R9" HorizontalAlignment="Left" Margin="23,367,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy9" Content="R10" HorizontalAlignment="Left" Margin="23,395,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy10" Content="R11" HorizontalAlignment="Left" Margin="23,423,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy11" Content="R12" HorizontalAlignment="Left" Margin="23,451,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy12" Content="R13" HorizontalAlignment="Left" Margin="23,479,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy13" Content="R14" HorizontalAlignment="Left" Margin="23,507,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblR_Copy14" Content="R15" HorizontalAlignment="Left" Margin="23,535,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
+        <Label x:Name="lblMemory" Content="MEMORY" HorizontalAlignment="Left" Margin="247,84,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="tbMemoryDisplay" VerticalScrollBarVisibility="Visible" IsReadOnly="True" HorizontalAlignment="Left" Height="247" Margin="247,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" Background="#FFF0F0F0"/>
+        <Rectangle HorizontalAlignment="Left" Height="459" Margin="616,81,0,0" Stroke="Black" VerticalAlignment="Top" Width="162"/>
+        <Label x:Name="lblBM"   Content="         Bloc &#xA;Microprogramat" HorizontalAlignment="Left" Margin="638,171,0,0" VerticalAlignment="Top" Width="120" FontSize="14" FontWeight="Bold" Height="73"/>
+        <TextBox x:Name="tbIR" HorizontalAlignment="Left" Height="23" Margin="638,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblIR" Content="IR" HorizontalAlignment="Left" Margin="688,400,0,0" VerticalAlignment="Top" Width="24" FontWeight="Bold" Height="23"/>
+        <Rectangle x:Name="rectMUX" HorizontalAlignment="Left" Height="46" Margin="1219,445,0,0" Stroke="Black" VerticalAlignment="Top" Width="57"/>
+        <Path x:Name="pSBUS" Data="M815,34 L816.5,424" HorizontalAlignment="Left" Height="476" Margin="865,48,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" Width="5.5"/>
+        <Path x:Name="pDBUS" Data="M908,34 L908,424" HorizontalAlignment="Left" Height="476" Margin="958,48,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" Width="4"/>
+        <Rectangle x:Name="rectMemory" HorizontalAlignment="Left" Height="84" Margin="1032,474,0,0" Stroke="Black" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="tbFlag" HorizontalAlignment="Left" Height="23" Margin="1028,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbRG" HorizontalAlignment="Left" Height="22" Margin="1028,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbSP" HorizontalAlignment="Left" Height="22" Margin="1028,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbT" HorizontalAlignment="Left" Height="22" Margin="1028,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbPC" HorizontalAlignment="Left" Height="22" Margin="1028,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Rectangle x:Name="rectALU" HorizontalAlignment="Left" Height="67" Margin="1032,65,0,0" Stroke="Black" VerticalAlignment="Top" Width="78"/>
+        <Rectangle x:Name="rectMUX2" HorizontalAlignment="Left" Height="57" Margin="1210,137,0,0" Stroke="Black" VerticalAlignment="Top" Width="54"/>
+        <TextBox x:Name="tbIVR" HorizontalAlignment="Left" Height="22" Margin="1028,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbADR" HorizontalAlignment="Left" Height="22" Margin="1028,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbMDR" HorizontalAlignment="Left" Height="22" Margin="1028,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblALU" Content="ALU" HorizontalAlignment="Left" Margin="1055,86,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblALUR" Content="R" HorizontalAlignment="Left" Margin="1091,86,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblALUD" Content="D" HorizontalAlignment="Left" Margin="1032,68,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblALUS" Content="S" HorizontalAlignment="Left" Margin="1032,106,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSBUS" Content="SBUS" HorizontalAlignment="Left" Margin="822,47,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDBUS" Content="DBUS" HorizontalAlignment="Left" Margin="915,50,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblMemoryBlock" Content="MEMORY" HorizontalAlignment="Left" Margin="1064,499,0,0" VerticalAlignment="Top" FontSize="10"/>
+        <Label x:Name="lblMemoryDO" Content="Data Out" HorizontalAlignment="Left" Margin="1066,537,0,0" VerticalAlignment="Top" FontSize="10" Height="21"/>
+        <Label x:Name="lblMemoryDI" Content="Data In" HorizontalAlignment="Left" Margin="1068,475,0,0" VerticalAlignment="Top" Height="24" FontSize="10"/>
+        <Label x:Name="lblMemoryAdr" Content="Address" HorizontalAlignment="Left" Margin="1032,521,0,0" VerticalAlignment="Top" FontSize="10"/>
+        <Label x:Name="lblMUX" Content="MUX" HorizontalAlignment="Left" Margin="1228,455,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblMUX2" Content="MUX" HorizontalAlignment="Left" Margin="1219,153,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblFlag" Content="FLAG" HorizontalAlignment="Left" Margin="1028,138,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
+        <Label x:Name="lblRG" Content="RG" HorizontalAlignment="Left" Margin="1028,177,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
+        <Label x:Name="lblSP" Content="SP" HorizontalAlignment="Left" Margin="1028,211,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
+        <Label x:Name="lblT" Content="T" HorizontalAlignment="Left" Margin="1028,249,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
+        <Label x:Name="lblPC" Content="PC" HorizontalAlignment="Left" Margin="1028,288,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
+        <Label x:Name="lblIVR" Content="IVR" HorizontalAlignment="Left" Margin="1028,324,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
+        <Label x:Name="lblADR" Content="ADR" HorizontalAlignment="Left" Margin="1028,363,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
+        <Label x:Name="lblMDR" Content="MDR" HorizontalAlignment="Left" Margin="1028,401,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
+        <TextBox x:Name="tbMPM" VerticalScrollBarVisibility="Visible" IsReadOnly="True" HorizontalAlignment="Left" Height="248" Margin="247,392,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" Background="#FFF0F0F0"/>
+        <Label x:Name="lblMPM" Content="MPM" HorizontalAlignment="Left" Margin="247,363,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold"/>
+        <Path x:Name="pDBUS_Copy" Data="M908,34 L908,424" HorizontalAlignment="Left" Height="476" Margin="1322.5,50,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" Width="4"/>
+        <Label x:Name="lblRBUS" Content="RBUS" HorizontalAlignment="Left" Margin="1278,50,0,0" VerticalAlignment="Top"/>
+        <Path x:Name="pDBUS_ALU" Data="M980,65 L906,65" HorizontalAlignment="Left" Height="1" Margin="958,81,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="74" StrokeThickness="2"/>
+        <Path x:Name="pSUBU_ALU" Data="M980,103.66667 L813,103.66667" HorizontalAlignment="Left" Height="1" Margin="864,118.667,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="169"/>
+        <Path x:Name="pALU_RBUS" Data="M1058,88 L1270.5,90" HorizontalAlignment="Left" Height="1" Margin="1109,103,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="214.5"/>
+        <Path x:Name="pALU_MUX2" Data="M1058,103.66667 C1232.6667,102.99966 1233.3333,102.99966 1233.3333,102.99966 L1234.0004,133.66632 1211.3337,133.66632" HorizontalAlignment="Left" Height="32.667" Margin="1109,118,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="178"/>
+        <Path x:Name="pMUX2_FLAG" Data="M1096,149 L1158.097,149" HorizontalAlignment="Left" Height="1" Margin="1147,164,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="64.097"/>
+        <Path x:Name="pRBUS_MUX2" Data="M1271.5,163 L1212.097,163" HorizontalAlignment="Left" Height="1" Margin="1263.097,178,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="61.403"/>
+        <Path x:Name="pFLAG_DBUS" Data="M976,146 L906,146" HorizontalAlignment="Left" Height="1" Margin="957,161,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="72"/>
+        <Path x:Name="pFLAG_SBUS" Data="M976,156 L813,156" HorizontalAlignment="Left" Height="1" Margin="864,171,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="165"/>
+        <Path x:Name="pRBUS_RG" Data="M1095,189.66667 L1272.5,189" HorizontalAlignment="Left" Height="1" Margin="1146,204,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="179.5"/>
+        <Path x:Name="pRBUS_SP" Data="M1095,228 L1271.5,227.66667" HorizontalAlignment="Left" Height="1" Margin="1146,242.667,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="178.5"/>
+        <Path x:Name="pRBUS_T" Data="M1095,261 L1271.5,261" HorizontalAlignment="Left" Height="1" Margin="1146,276,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="178.5"/>
+        <Path x:Name="pRBUS_PC" Data="M1095,301.66667 L1272.5,300.33333" HorizontalAlignment="Left" Height="1" Margin="1147,316.333,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="178.5"/>
+        <Path x:Name="pRBUS_IVR" Data="M1095,340 L1272.5,342" HorizontalAlignment="Left" Height="1" Margin="1147,356,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="178.5"/>
+        <Path x:Name="pRBUS_ADR" Data="M1096,378.05 L1272.5,378.05" HorizontalAlignment="Left" Height="1" Margin="1148,394.05,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="177.5"/>
+        <Path x:Name="pRBUS_MUX" Data="M1273.3333,484.33333 C1208,484.33333 1208.8337,484.33333 1208.8337,484.33333 L1208.1669,474.50034" HorizontalAlignment="Left" Height="10.833" Margin="1260.167,490.5,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="66.166"/>
+        <Path x:Name="pMUX_MDR" Data="M1194,428.33333 C1194,409 1194,409.16701 1194,409.16701 L1095.5,409.16701" HorizontalAlignment="Left" Height="20.166" Margin="1147.5,425.167,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="99.5"/>
+        <Path x:Name="pRG_DBUS" Data="M977,185 L906,185" HorizontalAlignment="Left" Height="1" Margin="958,201,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="72"/>
+        <Path x:Name="pRG_SBUS" Data="M976,195 L813,195" HorizontalAlignment="Left" Height="1" Margin="865,211,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="164"/>
+        <Path x:Name="pSP_DBUS" Data="M977,219 L906,219" HorizontalAlignment="Left" Height="1" Margin="958,235,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="72"/>
+        <Path x:Name="pSP_SBUS" Data="M976,233 L813,233" HorizontalAlignment="Left" Height="1" Margin="865,249,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="164"/>
+        <Path x:Name="pT_DBUS" Data="M977,252 L906,252" HorizontalAlignment="Left" Height="1" Margin="958,268,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="72"/>
+        <Path x:Name="pT_SBUS" Data="M977,267 L813,267" HorizontalAlignment="Left" Height="1" Margin="865,283,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="165"/>
+        <Path x:Name="pPC_DBUS" Data="M976,296 L906,296" HorizontalAlignment="Left" Height="1" Margin="958,312,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="71"/>
+        <Path x:Name="pPC_SBUS" Data="M976,308 L813,308" HorizontalAlignment="Left" Height="1" Margin="865,324,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="164"/>
+        <Path x:Name="pIVR_DBUS" Data="M977,332 L906,333" HorizontalAlignment="Left" Height="1" Margin="958,348,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="72"/>
+        <Path x:Name="pIVR_SBUS" Data="M976,345 L813,344.28" HorizontalAlignment="Left" Height="1" Margin="865,360.28,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="164"/>
+        <Path x:Name="pADR_DBUS" Data="M976,371 L906,368" HorizontalAlignment="Left" Height="1" Margin="958,384,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="71"/>
+        <Path x:Name="pADR_SBUS" Data="M976,385 L813,385" HorizontalAlignment="Left" Height="1" Margin="865,401,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="164"/>
+        <Path x:Name="pMDR_DBUS" Data="M976,404 L906,404" HorizontalAlignment="Left" Height="1" Margin="958,420,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="71"/>
+        <Path x:Name="pMDR_SBUS" Data="M977,417 L813,418.33333" HorizontalAlignment="Left" Height="1" Margin="865,433,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="165"/>
+        <Path x:Name="pMDR_MEMORY" Data="M941.33333,403.66667 C941.33333,441.66667 942.16698,442.49966 942.16698,442.49966 L1036.1305,443.16633 1036.1305,457.83253" HorizontalAlignment="Left" Height="55.166" Margin="993.333,419.667,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="95.834"/>
+        <Path x:Name="pIR_SBUS" Data="M706,405 L818.5,405" HorizontalAlignment="Left" Height="1" Margin="757,432,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="113.5"/>
+        <Path x:Name="pIR_DBUS" Data="M706,429 L906,429.333" HorizontalAlignment="Left" Height="1" Margin="758,445,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="201"/>
+        <Path x:Name="pADR_MEMORY" Data="M856.66667,385.66667 C856,523 855.49969,522.49966 855.49969,522.49966 L980.16553,523.83297" HorizontalAlignment="Left" Height="139.166" Margin="907.5,401.667,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="125.667"/>
+        <Path x:Name="pIR_MUX" Data="M586,419.66667 C546.66667,419.66667 546.16667,419.66667 546.16667,419.66667 L546.83303,599.83299 1185.5047,599.83299 1187.5048,474.49976" HorizontalAlignment="Left" Height="181.166" Margin="598.167,435.667,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="642.333"/>
+        <Path x:Name="pMEMORY_IRMUX" Data="M1039,542 L1037.167,600.833" HorizontalAlignment="Left" Height="59.833" Margin="1089.167,558,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="2.833"/>
+        <Button x:Name="btnNextIntruction" Content="NEXT INSTRUCION" HorizontalAlignment="Left" Margin="62,10,0,0" VerticalAlignment="Top" Width="120" BorderBrush="{x:Null}" Background="#FF8C57FF" Foreground="White"/>
+        <Button x:Name="btnExecuteInstruction" Content="EXECUTE" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top" Width="75" BorderBrush="{x:Null}" Background="#FF8C57FF" Foreground="White"/>
+        <Button x:Name="btnStep" Content="STEP" HorizontalAlignment="Left" Margin="292,10,0,0" VerticalAlignment="Top" Width="75" BorderBrush="{x:Null}" Background="#FF8C57FF" Foreground="White"/>
+
+    </Grid>
+</Window>
