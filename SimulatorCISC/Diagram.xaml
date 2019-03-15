@@ -122,8 +122,28 @@
         <Path x:Name="pIR_MUX" Data="M586,419.66667 C546.66667,419.66667 546.16667,419.66667 546.16667,419.66667 L546.83303,599.83299 1185.5047,599.83299 1187.5048,474.49976" HorizontalAlignment="Left" Height="181.166" Margin="598.167,435.667,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="642.333"/>
         <Path x:Name="pMEMORY_IRMUX" Data="M1039,542 L1037.167,600.833" HorizontalAlignment="Left" Height="59.833" Margin="1089.167,558,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="2.833"/>
         <Button x:Name="btnNextIntruction" Content="NEXT INSTRUCION" HorizontalAlignment="Left" Margin="62,10,0,0" VerticalAlignment="Top" Width="120" BorderBrush="{x:Null}" Background="#FF8C57FF" Foreground="White"/>
-        <Button x:Name="btnExecuteInstruction" Content="EXECUTE" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top" Width="75" BorderBrush="{x:Null}" Background="#FF8C57FF" Foreground="White"/>
+        <Button x:Name="btnExecuteInstruction" Content="EXECUTE" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top" Width="75" BorderBrush="{x:Null}" Background="#FF8C57FF" Foreground="White" Click="BtnExecuteInstruction_Click"/>
         <Button x:Name="btnStep" Content="STEP" HorizontalAlignment="Left" Margin="292,10,0,0" VerticalAlignment="Top" Width="75" BorderBrush="{x:Null}" Background="#FF8C57FF" Foreground="White"/>
+        <Label x:Name="lblSBUS_Display" Content="SBUS" HorizontalAlignment="Left" Margin="35,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDBUS_Display" Content="DBUS" HorizontalAlignment="Left" Margin="87,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblALU_Display" Content="ALU" HorizontalAlignment="Left" Margin="132,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblRBUS_Display" Content="RBUS" HorizontalAlignment="Left" Margin="184,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblOtherOP" Content="OTHER OPS" HorizontalAlignment="Left" Margin="228,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblMEM_OPS" Content="MEMORY OPS" HorizontalAlignment="Left" Margin="300,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblF" Content="f" HorizontalAlignment="Left" Margin="391,35,0,0" VerticalAlignment="Top" Width="24"/>
+        <Label x:Name="lblNTF" Content="nT/F" HorizontalAlignment="Left" Margin="435,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblINDEX" Content="INDEX" HorizontalAlignment="Left" Margin="480,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblU_ADR" Content="uADR JUMP" HorizontalAlignment="Left" Margin="532,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSBUS_Content" Content="" HorizontalAlignment="Left" Margin="35,58,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDBUS_Content" Content="" HorizontalAlignment="Left" Margin="87,58,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblALU_Content" Content="" HorizontalAlignment="Left" Margin="132,58,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblRBUS_Content" Content="" HorizontalAlignment="Left" Margin="184,58,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblOTHER_OP_Content" Content="" HorizontalAlignment="Left" Margin="228,58,0,0" VerticalAlignment="Top" Width="67"/>
+        <Label x:Name="lblMEMORY_OPS_Content" Content="" HorizontalAlignment="Left" Margin="300,58,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label x:Name="lblF_Content" Content="" HorizontalAlignment="Left" Margin="383,58,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblNTF_Content" Content="" HorizontalAlignment="Left" Margin="435,58,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblINDEX_Content" Content="" HorizontalAlignment="Left" Margin="480,58,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblU_ADR_Content" Content="" HorizontalAlignment="Left" Margin="532,58,0,0" VerticalAlignment="Top" Width="73"/>
 
     </Grid>
 </Window>

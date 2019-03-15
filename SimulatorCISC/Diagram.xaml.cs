@@ -23,5 +23,10 @@ namespace SimulatorCISC
         {
             InitializeComponent();
         }
+
+        private void BtnExecuteInstruction_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

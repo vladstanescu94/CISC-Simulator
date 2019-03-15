@@ -28,6 +28,7 @@ namespace SimulatorCISC
         private void BtnExecute_Click(object sender, RoutedEventArgs e)
         {
             parseInput(tbCode.Text);
+            
         }
 
         private void BtnDiagram_Click(object sender, RoutedEventArgs e)
