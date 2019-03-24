@@ -44,7 +44,7 @@
         <Label x:Name="lblMemory" Content="MEMORY" HorizontalAlignment="Left" Margin="247,84,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold"/>
         <TextBox x:Name="tbMemoryDisplay" VerticalScrollBarVisibility="Visible" IsReadOnly="True" HorizontalAlignment="Left" Height="247" Margin="247,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" Background="#FFF0F0F0"/>
         <Rectangle HorizontalAlignment="Left" Height="459" Margin="616,81,0,0" Stroke="Black" VerticalAlignment="Top" Width="162"/>
-        <Label x:Name="lblBM"   Content="         Bloc &#xA;Microprogramat" HorizontalAlignment="Left" Margin="638,171,0,0" VerticalAlignment="Top" Width="120" FontSize="14" FontWeight="Bold" Height="73"/>
+        <Label x:Name="lblBM"   Content="           Bcg&#xA;Microprogramat" HorizontalAlignment="Left" Margin="638,171,0,0" VerticalAlignment="Top" Width="120" FontSize="14" FontWeight="Bold" Height="73"/>
         <TextBox x:Name="tbIR" HorizontalAlignment="Left" Height="23" Margin="638,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblIR" Content="IR" HorizontalAlignment="Left" Margin="688,400,0,0" VerticalAlignment="Top" Width="24" FontWeight="Bold" Height="23"/>
         <Rectangle x:Name="rectMUX" HorizontalAlignment="Left" Height="46" Margin="1219,445,0,0" Stroke="Black" VerticalAlignment="Top" Width="57"/>

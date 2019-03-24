@@ -38,15 +38,20 @@ namespace SimulatorCISC
         }
 
         public void parseInput(string inputString) {
-            tbDisplay.Text = "";
-            string[] asmCode = inputString.Split(',');
-            foreach (string firstSplit in asmCode)
-            {
-                string[] temp = firstSplit.Split(' ');
-                foreach (string token in temp)
+            try {
+                tbDisplay.Text = "";
+                inputString = inputString.ToUpper();
+                string[] asmCode = inputString.Split(',');
+                foreach (string firstSplit in asmCode)
                 {
-                    tbDisplay.Text += token + '\n';
+                    string[] temp = firstSplit.Split(' ');
+                    foreach (string token in temp)
+                    {
+                        tbDisplay.Text += token + '\n';
+                    }
                 }
+            } catch(Exception e) {
+                MessageBox.Show(e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -55,7 +60,7 @@ namespace SimulatorCISC
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             Nullable<bool> result = dlg.ShowDialog();
             if (result.HasValue && result.Value) {
-                tbCode.Text = System.IO.File.ReadAllText(dlg.FileName);
+                tbCode.Text = System.IO.File.ReadAllText(dlg.FileName).ToUpper();
             }
         }
     }

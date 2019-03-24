@@ -26,7 +26,7 @@ namespace SimulatorCISC
 
         private void BtnExecuteInstruction_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
