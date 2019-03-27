@@ -38,8 +38,8 @@ namespace SimulatorCISC
         }
 
         public void parseInput(string inputString) {
+            tbDisplay.Text = "";
             try {
-                tbDisplay.Text = "";
                 inputString = inputString.ToUpper();
                 string[] asmCode = inputString.Split(',');
                 foreach (string firstSplit in asmCode)
