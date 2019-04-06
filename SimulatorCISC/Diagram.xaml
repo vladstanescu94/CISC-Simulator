@@ -83,10 +83,10 @@
         <Label x:Name="lblMDR" Content="MDR" HorizontalAlignment="Left" Margin="1028,401,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
         <TextBox x:Name="tbMPM" VerticalScrollBarVisibility="Visible" IsReadOnly="True" HorizontalAlignment="Left" Height="248" Margin="247,392,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="309" Background="#FFF0F0F0"/>
         <Label x:Name="lblMPM" Content="MPM" HorizontalAlignment="Left" Margin="247,363,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold"/>
-        <Path x:Name="pDBUS_Copy" Data="M908,34 L908,424" HorizontalAlignment="Left" Height="476" Margin="1322.5,50,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" Width="4"/>
+        <Path x:Name="pRBUS" Data="M908,34 L908,424" HorizontalAlignment="Left" Height="476" Margin="1322.5,50,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" Width="4"/>
         <Label x:Name="lblRBUS" Content="RBUS" HorizontalAlignment="Left" Margin="1278,50,0,0" VerticalAlignment="Top"/>
         <Path x:Name="pDBUS_ALU" Data="M980,65 L906,65" HorizontalAlignment="Left" Height="1" Margin="958,81,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="74" StrokeThickness="2"/>
-        <Path x:Name="pSUBU_ALU" Data="M980,103.66667 L813,103.66667" HorizontalAlignment="Left" Height="1" Margin="864,118.667,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="169"/>
+        <Path x:Name="pSBUS_ALU" Data="M980,103.66667 L813,103.66667" HorizontalAlignment="Left" Height="1" Margin="864,118.667,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="169"/>
         <Path x:Name="pALU_RBUS" Data="M1058,88 L1270.5,90" HorizontalAlignment="Left" Height="1" Margin="1109,103,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="214.5"/>
         <Path x:Name="pALU_MUX2" Data="M1058,103.66667 C1232.6667,102.99966 1233.3333,102.99966 1233.3333,102.99966 L1234.0004,133.66632 1211.3337,133.66632" HorizontalAlignment="Left" Height="32.667" Margin="1109,118,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="178"/>
         <Path x:Name="pMUX2_FLAG" Data="M1096,149 L1158.097,149" HorizontalAlignment="Left" Height="1" Margin="1147,164,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="64.097"/>

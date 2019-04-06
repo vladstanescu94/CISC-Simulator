@@ -5,7 +5,7 @@ namespace SimulatorCISC
     class Masks
     {
         //Adresa de la care incep instructiunile in memorie
-        public const int ADR_START_MEMORIE = 20;
+        public const int ADR_START_MEMORIE = 30;
 
         // MIR
         public const Int64 MASCA_SBUS = 0x0000007800000000;
