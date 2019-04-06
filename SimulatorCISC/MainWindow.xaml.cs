@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace SimulatorCISC
 {
@@ -28,9 +29,7 @@ namespace SimulatorCISC
      
         private void BtnExecute_Click(object sender, RoutedEventArgs e)
         {
-            parseInput();
-            
-            
+            parseInput();    
         }
 
         private void BtnDiagram_Click(object sender, RoutedEventArgs e)
@@ -56,8 +55,19 @@ namespace SimulatorCISC
         private void generateBinary() {
             tbBinary.Text = "";
             assembler.GenerateMachineCode();
+            writeBinaryFile();
             foreach (string line in assembler.MachineCodeList){
                 tbBinary.Text += line + "\r\n";
+            }
+        }
+
+        private void writeBinaryFile(){
+            string binaryFilePath = System.IO.Path.GetFullPath(System.IO.Path.Combine(Directory.GetCurrentDirectory(), @"..\..\", @"Output\binaryFile.bin"));
+            try
+            {
+                assembler.WriteBinaryFile(binaryFilePath);
+            }catch (Exception e) {
+                MessageBox.Show(e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
