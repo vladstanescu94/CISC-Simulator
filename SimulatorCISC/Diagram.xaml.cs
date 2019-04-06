@@ -127,8 +127,8 @@ namespace SimulatorCISC
                     SBUS = GetSbus(MIR);
                     DBUS = GetDbus(MIR);
                     RBUS = ExecuteALU(MIR, SBUS, DBUS);
-                    OutputRbus(MIR, RBUS);
                     OtherOperations(MIR);
+                    OutputRbus(MIR, RBUS);
                     MemoryOperations(MIR);
                     state = 0;
                     break;
@@ -295,7 +295,7 @@ namespace SimulatorCISC
                     break;
                 case 16://A(0)V
                     V = 0;
-                    FLAG = (ushort)(FLAG & 0xFFF8);
+                    FLAG = (ushort)(FLAG & 0xFFFB);
                     tbFlag.Text = FLAG.ToString();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
