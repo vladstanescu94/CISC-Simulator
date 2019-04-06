@@ -37,6 +37,8 @@ namespace SimulatorCISC
 
         Microinstructions dictionarMicroprogram;
 
+        
+
         public Diagram(short[] code)
         {
             InitializeComponent();
@@ -183,5 +185,64 @@ namespace SimulatorCISC
             }
             tbMPM.Text = aux1;
         }
+        private void BtnViewBinary_Click(object sender, RoutedEventArgs e)
+        {
+            tbPC.Text = Convert.ToString(PC, 2).PadLeft(16, '0');
+            tbIR.Text = Convert.ToString(IR, 2).PadLeft(16, '0');
+            tbFlag.Text = Convert.ToString(FLAG, 2).PadLeft(16, '0');
+            tbSP.Text = Convert.ToString(SP, 2).PadLeft(16, '0');
+            if (tbRG.Text.Length != 0)
+            {
+                string[] aux = tbRG.Text.Split(' ');
+                int a;
+                if (aux[0].Length == 3)
+                    a = Convert.ToInt32(tbRG.Text.Substring(1, 1));
+                else
+                    a = Convert.ToInt32(tbRG.Text.Substring(1, 2));
+                tbRG.Text = aux[0] + " " + Convert.ToString(RG[a], 2).PadLeft(16, '0');
+            }
+            tbT.Text = Convert.ToString(T, 2).PadLeft(16, '0');
+            tbIVR.Text = Convert.ToString(IVR, 2).PadLeft(16, '0');
+            tbADR.Text = Convert.ToString(ADR, 2).PadLeft(16, '0');
+            tbMDR.Text = Convert.ToString(MDR, 2).PadLeft(16, '0');
+
+            tbR0.Text = Convert.ToString(RG[0], 2).PadLeft(16, '0');
+            tbR1.Text = Convert.ToString(RG[1], 2).PadLeft(16, '0');
+            tbR2.Text = Convert.ToString(RG[2], 2).PadLeft(16, '0');
+            tbR3.Text = Convert.ToString(RG[3], 2).PadLeft(16, '0');
+            tbR4.Text = Convert.ToString(RG[4], 2).PadLeft(16, '0');
+            tbR5.Text = Convert.ToString(RG[5], 2).PadLeft(16, '0');
+            tbR6.Text = Convert.ToString(RG[6], 2).PadLeft(16, '0');
+            tbR7.Text = Convert.ToString(RG[7], 2).PadLeft(16, '0');
+            tbR8.Text = Convert.ToString(RG[8], 2).PadLeft(16, '0');
+            tbR9.Text = Convert.ToString(RG[9], 2).PadLeft(16, '0');
+            tbR10.Text = Convert.ToString(RG[10], 2).PadLeft(16, '0');
+            tbR11.Text = Convert.ToString(RG[11], 2).PadLeft(16, '0');
+            tbR12.Text = Convert.ToString(RG[12], 2).PadLeft(16, '0');
+            tbR13.Text = Convert.ToString(RG[13], 2).PadLeft(16, '0');
+            tbR14.Text = Convert.ToString(RG[14], 2).PadLeft(16, '0');
+            tbR15.Text = Convert.ToString(RG[15], 2).PadLeft(16, '0');
+
+
+
+            tbMemoryDisplay.Text = "";
+            string aux1 = "";
+            for (int j = 0; j < 5000; j++)
+            {
+                aux1 += j + ": " + Convert.ToString(MEMORIE[j], 2).PadLeft(16, '0');
+                aux1 += Environment.NewLine;
+
+            }
+            tbMemoryDisplay.Text = aux1;
+            tbMPM.Text = "";
+            aux1 = "";
+            for (int j = 0; j < 173; j++)
+            {
+                aux1 += j + ": " + Convert.ToString(MPM[j], 2).PadLeft(39, '0');
+                aux1 += Environment.NewLine;
+            }
+            tbMPM.Text = aux1;
+        }
     }
+
 }

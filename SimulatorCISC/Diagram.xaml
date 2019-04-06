@@ -42,7 +42,7 @@
         <Label x:Name="lblR_Copy13" Content="R14" HorizontalAlignment="Left" Margin="23,507,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
         <Label x:Name="lblR_Copy14" Content="R15" HorizontalAlignment="Left" Margin="23,535,0,0" VerticalAlignment="Top" Width="34" FontWeight="Bold" Height="23"/>
         <Label x:Name="lblMemory" Content="MEMORY" HorizontalAlignment="Left" Margin="247,84,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold"/>
-        <TextBox x:Name="tbMemoryDisplay" VerticalScrollBarVisibility="Visible" IsReadOnly="True" HorizontalAlignment="Left" Height="247" Margin="247,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" Background="#FFF0F0F0"/>
+        <TextBox x:Name="tbMemoryDisplay" VerticalScrollBarVisibility="Visible" IsReadOnly="True" HorizontalAlignment="Left" Height="247" Margin="247,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="309" Background="#FFF0F0F0"/>
         <Rectangle HorizontalAlignment="Left" Height="459" Margin="616,81,0,0" Stroke="Black" VerticalAlignment="Top" Width="162"/>
         <Label x:Name="lblBM"   Content="           Bcg&#xA;Microprogramat" HorizontalAlignment="Left" Margin="638,171,0,0" VerticalAlignment="Top" Width="120" FontSize="14" FontWeight="Bold" Height="73"/>
         <TextBox x:Name="tbIR" HorizontalAlignment="Left" Height="23" Margin="638,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -81,7 +81,7 @@
         <Label x:Name="lblIVR" Content="IVR" HorizontalAlignment="Left" Margin="1028,324,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
         <Label x:Name="lblADR" Content="ADR" HorizontalAlignment="Left" Margin="1028,363,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
         <Label x:Name="lblMDR" Content="MDR" HorizontalAlignment="Left" Margin="1028,401,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
-        <TextBox x:Name="tbMPM" VerticalScrollBarVisibility="Visible" IsReadOnly="True" HorizontalAlignment="Left" Height="248" Margin="247,392,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" Background="#FFF0F0F0"/>
+        <TextBox x:Name="tbMPM" VerticalScrollBarVisibility="Visible" IsReadOnly="True" HorizontalAlignment="Left" Height="248" Margin="247,392,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="309" Background="#FFF0F0F0"/>
         <Label x:Name="lblMPM" Content="MPM" HorizontalAlignment="Left" Margin="247,363,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold"/>
         <Path x:Name="pDBUS_Copy" Data="M908,34 L908,424" HorizontalAlignment="Left" Height="476" Margin="1322.5,50,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" Width="4"/>
         <Label x:Name="lblRBUS" Content="RBUS" HorizontalAlignment="Left" Margin="1278,50,0,0" VerticalAlignment="Top"/>
@@ -144,7 +144,7 @@
         <Label x:Name="lblINDEX_Content" Content="" HorizontalAlignment="Left" Margin="480,58,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblU_ADR_Content" Content="" HorizontalAlignment="Left" Margin="532,58,0,0" VerticalAlignment="Top" Width="73"/>
         <Button x:Name="btnViewHex" Content="HEX" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF8C57FF" BorderBrush="{x:Null}" Foreground="White" Click="BtnViewHex_Click"/>
-        <Button x:Name="btnViewBinary" Content="BINARY" HorizontalAlignment="Left" Margin="303,10,0,0" VerticalAlignment="Top" Width="64" BorderBrush="{x:Null}" Foreground="White" Background="#FF8C57FF"/>
+        <Button x:Name="btnViewBinary" Content="BINARY" HorizontalAlignment="Left" Margin="303,10,0,0" VerticalAlignment="Top" Width="64" BorderBrush="{x:Null}" Foreground="White" Background="#FF8C57FF" Click="BtnViewBinary_Click"/>
         <Button x:Name="btnViewDecimal" Content="DECIMAL" HorizontalAlignment="Left" Margin="383,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.067,0.6" BorderBrush="{x:Null}" Foreground="White" Background="#FF8C57FF"/>
 
     </Grid>
