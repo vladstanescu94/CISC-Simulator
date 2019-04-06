@@ -22,6 +22,7 @@ namespace SimulatorCISC
         public List<List<string>> AsmInstructionLines { get => asmInstructionLines; set => asmInstructionLines = value; }
         public List<string> MachineCodeList { get => machineCodeList; set => machineCodeList = value; }
 
+        //load asmInstructionLines with file content
         public bool ParseASMFile() {
             try {
                 asmInstructionLines.Clear();
@@ -56,6 +57,7 @@ namespace SimulatorCISC
             return line;
         }
 
+        //etichete
         private void GetLabels(){
             int labelAddr= 0;
             foreach (var line in asmInstructionLines) {
@@ -76,6 +78,7 @@ namespace SimulatorCISC
             }
         }
 
+        //mod adresare imediat
         private bool IsMAI(string element) {
             return int.TryParse(element, out int intResult);
         }

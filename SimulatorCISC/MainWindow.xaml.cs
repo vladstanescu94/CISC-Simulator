@@ -34,7 +34,7 @@ namespace SimulatorCISC
 
         private void BtnDiagram_Click(object sender, RoutedEventArgs e)
         {
-            Diagram diagramWindow = new Diagram();
+            Diagram diagramWindow = new Diagram(assembler.binaryMachineCodeArray);
             diagramWindow.Show();
         }
 
@@ -62,7 +62,7 @@ namespace SimulatorCISC
         }
 
         private void writeBinaryFile(){
-            string binaryFilePath = System.IO.Path.GetFullPath(System.IO.Path.Combine(Directory.GetCurrentDirectory(), @"..\..\", @"Output\binaryFile.bin"));
+            string binaryFilePath = System.IO.Path.GetFullPath(System.IO.Path.Combine(Directory.GetCurrentDirectory(), @"..\..\", @"Output\result.bin"));
             try
             {
                 assembler.WriteBinaryFile(binaryFilePath);
@@ -76,11 +76,11 @@ namespace SimulatorCISC
             try{
                 Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
                 dlg.Filter = "Assembler Source File input(*.asm)|*.asm";
-                Nullable<bool> result = dlg.ShowDialog();
+                bool? result = dlg.ShowDialog();
                 if (result.HasValue && result.Value)
                 {
                     assembler.fileName = dlg.FileName;
-                    tbCode.Text = System.IO.File.ReadAllText(dlg.FileName).ToUpper();
+                    tbCode.Text = File.ReadAllText(dlg.FileName).ToUpper();
                 }
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);

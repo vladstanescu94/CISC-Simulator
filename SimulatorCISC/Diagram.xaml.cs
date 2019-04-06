@@ -46,10 +46,16 @@ namespace SimulatorCISC
         private bool instructiuneFinalizata = false;
         Microinstructions dictionarMicroprogram;
 
-        public Diagram()
+        public Diagram(short[] code)
         {
             InitializeComponent();
-
+            try {
+                codBinar = new short[code.Length];
+                code.CopyTo(codBinar, 0);
+            } catch (Exception e){
+                MessageBox.Show("Please execute code first! " + e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
             dictionarMicroprogram = new Microinstructions();
             dictionarMicroprogram.microprogramEmulare.CopyTo(MPM, 0);
             Initializare();
@@ -100,9 +106,12 @@ namespace SimulatorCISC
 
         private void Initializare() {
             PC = (ushort)(Masks.ADR_START_MEMORIE + Assembler.StartAddress);
-            //codBinar.CopyTo(MEMORIE, PC);
-            //ultimaAdresaMemorie = (ushort)(PC + codBinar.Count());
-
+            try {
+                codBinar.CopyTo(MEMORIE, PC);
+                ultimaAdresaMemorie = (ushort)(PC + codBinar.Count());
+            } catch (Exception e){
+                MessageBox.Show("Machine code not found! " + e.Message , "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             //IVT
             MEMORIE[0] = 5;
             MEMORIE[5] = Convert.ToInt16("1110000000001001", 2); //SCC
@@ -118,10 +127,10 @@ namespace SimulatorCISC
             C = V = S = Z = 0;
             state = 0;
 
-            for (int i = 0; i < 1000; i ++) {
-                tbMemoryDisplay.Text += i + ": " + MEMORIE[i].ToString();
-                tbMemoryDisplay.Text += Environment.NewLine; 
-            }
+            //for (int i = 0; i < 1000; i ++) {
+            //    tbMemoryDisplay.Text += i + ": " + MEMORIE[i].ToString();
+            //    tbMemoryDisplay.Text += Environment.NewLine; 
+            //}
 
         }
     }

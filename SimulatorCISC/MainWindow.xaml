@@ -14,7 +14,7 @@
         <Label x:Name="lblCode" Content="ASM File Code" HorizontalAlignment="Left" Margin="50,10,0,0" VerticalAlignment="Top" Width="208" FontSize="18"/>
         <Label x:Name="lblToken" Content="Tokens" HorizontalAlignment="Left" Margin="374,10,0,0" VerticalAlignment="Top" Width="208" FontSize="18"/>
         <Button x:Name="btnOpenFile" Content="OPEN FILE" HorizontalAlignment="Left" Margin="50,547,0,0" VerticalAlignment="Top" Width="262" Click="BtnOpenFile_Click" Cursor="Hand" Background="#FF8C57FF" Foreground="White" BorderBrush="{x:Null}" Height="60" FontSize="28"/>
-        <TextBox x:Name="tbBinary" HorizontalAlignment="Left" IsReadOnly="True" Height="474" Margin="702,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="262" BorderBrush="#FF404040" Background="#FFF7F7F7"/>
+        <TextBox x:Name="tbBinary" HorizontalAlignment="Left" IsReadOnly="True" Height="474" Margin="702,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="262" BorderBrush="#FF404040" Background="#FFF7F7F7" FontSize="22"/>
         <Label x:Name="label" Content="Binary Code" HorizontalAlignment="Left" Margin="702,10,0,0" VerticalAlignment="Top" Width="172" FontSize="18"/>
 
     </Grid>
