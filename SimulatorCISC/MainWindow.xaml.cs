@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.IO;
 
 namespace SimulatorCISC
@@ -25,11 +13,13 @@ namespace SimulatorCISC
         public MainWindow()
         {
             InitializeComponent();
+            btnDiagram.IsEnabled = false;
         }
      
         private void BtnExecute_Click(object sender, RoutedEventArgs e)
         {
-            parseInput();    
+            parseInput();
+            btnDiagram.IsEnabled = true;
         }
 
         private void BtnDiagram_Click(object sender, RoutedEventArgs e)
@@ -62,7 +52,7 @@ namespace SimulatorCISC
         }
 
         private void writeBinaryFile(){
-            string binaryFilePath = System.IO.Path.GetFullPath(System.IO.Path.Combine(Directory.GetCurrentDirectory(), @"..\..\", @"Output\result.bin"));
+            string binaryFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\", @"Output\result.bin"));
             try
             {
                 assembler.WriteBinaryFile(binaryFilePath);
@@ -74,8 +64,10 @@ namespace SimulatorCISC
         private void BtnOpenFile_Click(object sender, RoutedEventArgs e)
         {
             try{
-                Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-                dlg.Filter = "Assembler Source File input(*.asm)|*.asm";
+                Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog
+                {
+                    Filter = "Assembler Source File input(*.asm)|*.asm"
+                };
                 bool? result = dlg.ShowDialog();
                 if (result.HasValue && result.Value)
                 {

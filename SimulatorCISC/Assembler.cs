@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace SimulatorCISC
@@ -13,19 +11,17 @@ namespace SimulatorCISC
         Encodings encoding = new Encodings();
 
         public string fileName;
-        private List<List<string>> asmInstructionLines = new List<List<string>>();
         private Dictionary<string, int> labelsDictionary = new Dictionary<string, int>();
-        private List<string> machineCodeList = new List<string>();
         public short[] binaryMachineCodeArray;
         static public int StartAddress;
 
-        public List<List<string>> AsmInstructionLines { get => asmInstructionLines; set => asmInstructionLines = value; }
-        public List<string> MachineCodeList { get => machineCodeList; set => machineCodeList = value; }
+        public List<List<string>> AsmInstructionLines { get; set; } = new List<List<string>>();
+        public List<string> MachineCodeList { get; set; } = new List<string>();
 
         //load asmInstructionLines with file content
         public bool ParseASMFile() {
             try {
-                asmInstructionLines.Clear();
+                AsmInstructionLines.Clear();
                 string[] lines = File.ReadAllLines(fileName);
 
                 if (lines.Any()) {
@@ -37,7 +33,7 @@ namespace SimulatorCISC
                         if (asmCode.All(y => string.IsNullOrEmpty(y))) {
                             continue;
                         }
-                        asmInstructionLines.Add(asmCode.Where(x => !string.IsNullOrWhiteSpace(x)).ToList());
+                        AsmInstructionLines.Add(asmCode.Where(x => !string.IsNullOrWhiteSpace(x)).ToList());
                     }
                     return true;
                 } else{
@@ -60,7 +56,7 @@ namespace SimulatorCISC
         //etichete
         private void GetLabels(){
             int labelAddr= 0;
-            foreach (var line in asmInstructionLines) {
+            foreach (var line in AsmInstructionLines) {
                 foreach (var element in line) {
                     if (element.Contains(":")) {
                         string label = element.Remove(element.Length - 1);
@@ -79,14 +75,12 @@ namespace SimulatorCISC
         }
 
         //mod adresare imediat
-        private bool IsMAI(string element) {
-            return int.TryParse(element, out int intResult);
-        }
+        private bool IsMAI(string element) => int.TryParse(element, result: out _);
 
         public void GenerateMachineCode() {
             GetLabels();
 
-            machineCodeList.Clear();
+            MachineCodeList.Clear();
 
             string binaryLine;
             string binaryOpCode;
@@ -96,7 +90,7 @@ namespace SimulatorCISC
             List<string> binaryIndexList = new List<string>();
 
             try {
-                foreach (var line in asmInstructionLines) {
+                foreach (var line in AsmInstructionLines) {
                     binaryLine = "";
                     binaryOpCode = "";
                     binaryRegAndMA = "";
@@ -130,7 +124,7 @@ namespace SimulatorCISC
                             isLabel = true;
                             continue;
                         } else if (IsLabelInInstruction(element)) {
-                            int offset = (line.Contains("JMP") || line.Contains("CALL")) ? labelsDictionary[element] + Masks.ADR_START_MEMORIE : labelsDictionary[element] - machineCodeList.Count - 1;
+                            int offset = (line.Contains("JMP") || line.Contains("CALL")) ? labelsDictionary[element] + Masks.ADR_START_MEMORIE : labelsDictionary[element] - MachineCodeList.Count - 1;
                             if (line.Contains("JMP") || line.Contains("CALL")) {
                                 binaryRegAndMA += "00" + "0000";
                                 binaryIndexList.Add(Convert.ToString((Int16)offset, 2).PadLeft(16, '0'));
@@ -159,9 +153,9 @@ namespace SimulatorCISC
 
                     MachineCodeList.Add(binaryLine);
                     binaryIndexList.Reverse();
-                    binaryIndexList.ForEach(x => machineCodeList.Add(x));
+                    binaryIndexList.ForEach(x => MachineCodeList.Add(x));
                 }
-                binaryMachineCodeArray = machineCodeList.ConvertAll<short>(x => Convert.ToInt16(x, 2)).ToArray();
+                binaryMachineCodeArray = MachineCodeList.ConvertAll(x => Convert.ToInt16(x, 2)).ToArray();
             } catch (Exception e) {
                 MessageBox.Show(e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
