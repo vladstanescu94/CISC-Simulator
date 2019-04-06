@@ -81,6 +81,8 @@ namespace SimulatorCISC
         }
 
         public void GenerateMachineCode() {
+            GetLabels();
+
             machineCodeList.Clear();
 
             string binaryLine;
@@ -105,12 +107,65 @@ namespace SimulatorCISC
                             binaryOpCode = encoding.instructionDictionary[element];
                         } else if (encoding.registerDictionary.ContainsKey(element)){ // check if is register (adresare directa)
                             binaryRegAndMA += "01" + encoding.registerDictionary[element];
+                        } else if (element.Contains("("))  { // register AI
+                            string[] items = element.Split('(', ')').Where(x => x != "").ToArray();
+                            if(items.Count() == 1){
+                                binaryRegAndMA += "10" + encoding.registerDictionary[items[0]];
+                            } else {
+                                foreach (var item in items){
+                                    if (encoding.registerDictionary.ContainsKey(item)){
+                                        binaryRegAndMA += "11" + encoding.registerDictionary[item];
+                                    } else {
+                                        binaryIndexList.Add(Convert.ToString(Convert.ToUInt16(item), 2).PadLeft(16, '0'));
+                                    }
+                                }
+                            }
+                        } else if (IsMAI(element)) { // adresare imediata
+                            binaryRegAndMA += "00" + "0000";
+                            binaryIndexList.Add(Convert.ToString(Convert.ToUInt16(element), 2).PadLeft(16, '0'));
+                        } else if (element.Contains(":")) {
+                            isLabel = true;
+                            continue;
+                        } else if (IsLabelInInstruction(element)) {
+                            int offset = (line.Contains("JMP") || line.Contains("CALL")) ? labelsDictionary[element] + Masks.ADR_START_MEMORIE : labelsDictionary[element] - machineCodeList.Count - 1;
+                            if (line.Contains("JMP") || line.Contains("CALL")) {
+                                binaryRegAndMA += "00" + "0000";
+                                binaryIndexList.Add(Convert.ToString((Int16)offset, 2).PadLeft(16, '0'));
+                            }else {
+                                if (offset < -255 || offset > 255) { throw new Exception("Offset 8 bits out of range!"); }
+                                binaryOffset = Convert.ToString((byte)offset, 2).PadLeft(8, '0');
+                            }
+                        } else if (element == "END"){
+                            StartAddress = (line.Count == 1) ? 0 : labelsDictionary[line.Last()];
+                            isLabel = true;
+                            continue;
+                        } else {
+                            Exception exc = new Exception("Parsed File Code is  wrong");
+                            throw exc;
                         }
                     }
+                    if (isLabel) {
+                        continue;
+                    } else if (binaryRegAndMA.Any()) {
+                        binaryLine = binaryOpCode + binaryRegAndMA.Substring(6) + binaryRegAndMA.Substring(0, 6); // B1 B2
+                    } else if (binaryOffset.Any()) {
+                        binaryLine = binaryOpCode + binaryOffset; //B3
+                    } else { // B4
+                        binaryLine = binaryOpCode;
+                    }
+
+                    MachineCodeList.Add(binaryLine);
+                    binaryIndexList.Reverse();
+                    binaryIndexList.ForEach(x => machineCodeList.Add(x));
                 }
+                binaryMachineCodeArray = machineCodeList.ConvertAll<short>(x => Convert.ToInt16(x, 2)).ToArray();
             } catch (Exception e) {
                 MessageBox.Show(e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private bool IsLabelInInstruction(string element) {
+            return labelsDictionary.ContainsKey(element);
         }
 
         public void WriteBinaryFile(string filePath) {
