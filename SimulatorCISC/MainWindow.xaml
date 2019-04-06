@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimulatorCISC"
         mc:Ignorable="d"
-        Title="Simulator CISC" Height="768" Width="1024" >
+        Title="Simulator CISC" Height="700" Width="1024" >
     <Grid>
-        <TextBox x:Name="tbCode" Margin="62,122,0,0" TextWrapping="Wrap" AcceptsReturn="True" Text="" FontSize="22" BorderBrush="#FF404040" Height="512" VerticalAlignment="Top" HorizontalAlignment="Left" Width="262"/>
-        <TextBox x:Name="tbDisplay" Margin="0,122,368,0" TextWrapping="Wrap" IsReadOnly="True" Text="" FontSize="22" Background="#FFF7F7F7" BorderBrush="#FF404040" HorizontalAlignment="Right" Width="262" Height="512" VerticalAlignment="Top"/>
-        <Button Cursor="Hand" x:Name="btnExecute" Content="EXECUTE" Margin="714,654,40,0" Background="#FF8C57FF" BorderBrush="{x:Null}" Foreground="White" FontSize="28" Click="BtnExecute_Click" Height="60" VerticalAlignment="Top"/>
-        <Button Cursor="Hand" x:Name="btnDiagram" Content="OPEN DIAGRAM" HorizontalAlignment="Left" Margin="386,654,0,0" VerticalAlignment="Top" Width="262" Height="60" Background="#FF8C57FF" BorderBrush="{x:Null}" Foreground="White" FontSize="28" Click="BtnDiagram_Click"/>
-        <Label x:Name="lblCode" Content="Insert Code" HorizontalAlignment="Left" Margin="62,83,0,0" VerticalAlignment="Top" Width="208" FontSize="18"/>
-        <Label x:Name="lblToken" Content="Tokens" HorizontalAlignment="Left" Margin="386,83,0,0" VerticalAlignment="Top" Width="208" FontSize="18"/>
-        <Button x:Name="btnOpenFile" Content="OPEN FILE" HorizontalAlignment="Left" Margin="62,654,0,0" VerticalAlignment="Top" Width="262" Click="BtnOpenFile_Click" Cursor="Hand" Background="#FF8C57FF" Foreground="White" BorderBrush="{x:Null}" Height="60" FontSize="28"/>
-        <TextBox x:Name="tbBinary" HorizontalAlignment="Left" IsReadOnly="True" Height="512" Margin="714,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="262" BorderBrush="#FF404040" Background="#FFF7F7F7"/>
-        <Label x:Name="label" Content="Binary Code" HorizontalAlignment="Left" Margin="714,83,0,0" VerticalAlignment="Top" Width="172" FontSize="18"/>
+        <TextBox x:Name="tbCode" Margin="50,79,0,0" TextWrapping="Wrap" IsReadOnly="True" Text="" FontSize="22" BorderBrush="#FF404040" Height="474" VerticalAlignment="Top" HorizontalAlignment="Left" Width="262" Background="#FFF7F7F7"/>
+        <TextBox x:Name="tbDisplay" Margin="0,79,380,0" TextWrapping="Wrap" IsReadOnly="True" Text="" FontSize="22" Background="#FFF7F7F7" BorderBrush="#FF404040" HorizontalAlignment="Right" Width="262" Height="474" VerticalAlignment="Top"/>
+        <Button Cursor="Hand" x:Name="btnExecute" Content="EXECUTE" Margin="702,577,52,0" Background="#FF8C57FF" BorderBrush="{x:Null}" Foreground="White" FontSize="28" Click="BtnExecute_Click" Height="60" VerticalAlignment="Top"/>
+        <Button Cursor="Hand" x:Name="btnDiagram" Content="OPEN DIAGRAM" HorizontalAlignment="Left" Margin="374,577,0,0" VerticalAlignment="Top" Width="262" Height="60" Background="#FF8C57FF" BorderBrush="{x:Null}" Foreground="White" FontSize="28" Click="BtnDiagram_Click"/>
+        <Label x:Name="lblCode" Content="ASM File Code" HorizontalAlignment="Left" Margin="50,40,0,0" VerticalAlignment="Top" Width="208" FontSize="18"/>
+        <Label x:Name="lblToken" Content="Tokens" HorizontalAlignment="Left" Margin="374,40,0,0" VerticalAlignment="Top" Width="208" FontSize="18"/>
+        <Button x:Name="btnOpenFile" Content="OPEN FILE" HorizontalAlignment="Left" Margin="50,577,0,0" VerticalAlignment="Top" Width="262" Click="BtnOpenFile_Click" Cursor="Hand" Background="#FF8C57FF" Foreground="White" BorderBrush="{x:Null}" Height="60" FontSize="28"/>
+        <TextBox x:Name="tbBinary" HorizontalAlignment="Left" IsReadOnly="True" Height="474" Margin="702,79,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="262" BorderBrush="#FF404040" Background="#FFF7F7F7"/>
+        <Label x:Name="label" Content="Binary Code" HorizontalAlignment="Left" Margin="702,40,0,0" VerticalAlignment="Top" Width="172" FontSize="18"/>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="1016" Background="#FFA37DF7" Foreground="White">
             <MenuItem Header="File" Height="35" Width="66" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="60,0,0,0"/>
             <MenuItem Header="Edit" Height="33" Width="66" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,0,0,0"/>

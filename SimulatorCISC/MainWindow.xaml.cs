@@ -20,6 +20,7 @@ namespace SimulatorCISC
     /// </summary>
     public partial class MainWindow : Window
     {
+        Assembler assembler = new Assembler();
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +28,8 @@ namespace SimulatorCISC
      
         private void BtnExecute_Click(object sender, RoutedEventArgs e)
         {
-            parseInput(tbCode.Text);
+            parseInput();
+            
             
         }
 
@@ -37,30 +39,41 @@ namespace SimulatorCISC
             diagramWindow.Show();
         }
 
-        public void parseInput(string inputString) {
+        public void parseInput() {
             tbDisplay.Text = "";
-            try {
-                inputString = inputString.ToUpper();
-                string[] asmCode = inputString.Split(',');
-                foreach (string firstSplit in asmCode)
-                {
-                    string[] temp = firstSplit.Split(' ');
-                    foreach (string token in temp)
-                    {
-                        tbDisplay.Text += token + '\n';
+            if (assembler.ParseASMFile()) {
+                foreach (var line in assembler.AsmInstructionLines) {
+                    foreach (var temp in line) {
+                        tbDisplay.Text += temp + "\r\n";
                     }
                 }
-            } catch(Exception e) {
-                MessageBox.Show(e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                generateBinary();
+            } else{
+                MessageBox.Show("Parsing Failed", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void generateBinary() {
+            tbBinary.Text = "";
+            assembler.GenerateMachineCode();
+            foreach (string line in assembler.MachineCodeList){
+                tbBinary.Text += line + "\r\n";
             }
         }
 
         private void BtnOpenFile_Click(object sender, RoutedEventArgs e)
         {
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            Nullable<bool> result = dlg.ShowDialog();
-            if (result.HasValue && result.Value) {
-                tbCode.Text = System.IO.File.ReadAllText(dlg.FileName).ToUpper();
+            try{
+                Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+                dlg.Filter = "Assembler Source File input(*.asm)|*.asm";
+                Nullable<bool> result = dlg.ShowDialog();
+                if (result.HasValue && result.Value)
+                {
+                    assembler.fileName = dlg.FileName;
+                    tbCode.Text = System.IO.File.ReadAllText(dlg.FileName).ToUpper();
+                }
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
