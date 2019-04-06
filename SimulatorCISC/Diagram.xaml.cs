@@ -243,6 +243,65 @@ namespace SimulatorCISC
             }
             tbMPM.Text = aux1;
         }
+        private void BtnViewDecimal_Click(object sender, RoutedEventArgs e)
+        {
+            tbPC.Text = PC.ToString();
+            tbIR.Text = IR.ToString();
+            tbFlag.Text = FLAG.ToString();
+            tbSP.Text = SP.ToString();
+
+            if (tbRG.Text.Length != 0)
+            {
+
+                string[] aux = tbRG.Text.Split(' ');
+
+                int a;
+                if (aux[0].Length == 3)
+                    a = Convert.ToInt32(tbRG.Text.Substring(1, 1));
+                else
+                    a = Convert.ToInt32(tbRG.Text.Substring(1, 2));
+                tbRG.Text = aux[0] + " " + RG[a].ToString();
+            }
+            tbT.Text = T.ToString();
+            tbIVR.Text = IVR.ToString();
+            tbADR.Text = ADR.ToString();
+            tbMDR.Text = MDR.ToString();
+
+            tbR0.Text = RG[0].ToString();
+            tbR1.Text = RG[1].ToString();
+            tbR2.Text = RG[2].ToString();
+            tbR3.Text = RG[3].ToString();
+            tbR4.Text = RG[4].ToString();
+            tbR5.Text = RG[5].ToString();
+            tbR6.Text = RG[6].ToString();
+            tbR7.Text = RG[7].ToString();
+            tbR8.Text = RG[8].ToString();
+            tbR9.Text = RG[9].ToString();
+            tbR10.Text = RG[10].ToString();
+            tbR11.Text = RG[11].ToString();
+            tbR12.Text = RG[12].ToString();
+            tbR13.Text = RG[13].ToString();
+            tbR14.Text = RG[14].ToString();
+            tbR15.Text = RG[15].ToString();
+
+            tbMemoryDisplay.Text = "";
+            string aux1 = "";
+            for (int j = 0; j < 5000; j++)
+            {
+                aux1 += j + ": " + MEMORIE[j].ToString();
+                aux1 += Environment.NewLine;
+
+            }
+            tbMemoryDisplay.Text = aux1;
+            tbMPM.Text = "";
+            aux1 = "";
+            for (int j = 0; j < 173; j++)
+            {
+                aux1 += j + ": " + MPM[j].ToString().PadLeft(16, '0');
+                aux1 += Environment.NewLine;
+            }
+            tbMPM.Text = aux1;
+        }
     }
 
 }
