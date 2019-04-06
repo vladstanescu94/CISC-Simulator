@@ -143,6 +143,9 @@
         <Label x:Name="lblNTF_Content" Content="" HorizontalAlignment="Left" Margin="435,58,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblINDEX_Content" Content="" HorizontalAlignment="Left" Margin="480,58,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblU_ADR_Content" Content="" HorizontalAlignment="Left" Margin="532,58,0,0" VerticalAlignment="Top" Width="73"/>
+        <Button x:Name="btnViewHex" Content="HEX" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Width="75" Background="#FF8C57FF" BorderBrush="{x:Null}" Foreground="White" Click="BtnViewHex_Click"/>
+        <Button x:Name="btnViewBinary" Content="BINARY" HorizontalAlignment="Left" Margin="303,10,0,0" VerticalAlignment="Top" Width="64" BorderBrush="{x:Null}" Foreground="White" Background="#FF8C57FF"/>
+        <Button x:Name="btnViewDecimal" Content="DECIMAL" HorizontalAlignment="Left" Margin="383,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.067,0.6" BorderBrush="{x:Null}" Foreground="White" Background="#FF8C57FF"/>
 
     </Grid>
 </Window>

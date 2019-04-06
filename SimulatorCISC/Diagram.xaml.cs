@@ -34,6 +34,7 @@ namespace SimulatorCISC
         private byte BVI, BPO;
         private UInt16 ultimaAdresaMemorie;
         private bool instructiuneFinalizata = false;
+
         Microinstructions dictionarMicroprogram;
 
         public Diagram(short[] code)
@@ -122,6 +123,65 @@ namespace SimulatorCISC
             //    tbMemoryDisplay.Text += Environment.NewLine; 
             //}
 
+        }
+
+        private void BtnViewHex_Click(object sender, RoutedEventArgs e)
+        {
+            tbPC.Text = Convert.ToString(PC, 16).PadLeft(4, '0').ToUpper();
+            tbIR.Text = Convert.ToString(IR, 16).PadLeft(4, '0').ToUpper();
+            tbFlag.Text = Convert.ToString(FLAG, 16).PadLeft(4, '0').ToUpper();
+            tbSP.Text = Convert.ToString(SP, 16).PadLeft(4, '0').ToUpper();
+            if (tbRG.Text.Length != 0)
+            {
+                string[] aux = tbRG.Text.Split(' ');
+                int a;
+                if (aux[0].Length == 3)
+                    a = Convert.ToInt32(tbRG.Text.Substring(1, 1));
+                else
+                    a = Convert.ToInt32(tbRG.Text.Substring(1, 2));
+                tbRG.Text = aux[0] + " " + Convert.ToString(RG[a], 16).PadLeft(4, '0').ToUpper();
+            }
+            tbT.Text = Convert.ToString(T, 16).PadLeft(4, '0').ToUpper();
+            tbIVR.Text = Convert.ToString(IVR, 16).PadLeft(4, '0').ToUpper();
+            tbADR.Text = Convert.ToString(ADR, 16).PadLeft(4, '0').ToUpper();
+            tbMDR.Text = Convert.ToString(MDR, 16).PadLeft(4, '0').ToUpper();
+
+            tbR0.Text = Convert.ToString(RG[0], 16).PadLeft(4, '0').ToUpper();
+            tbR1.Text = Convert.ToString(RG[1], 16).PadLeft(4, '0').ToUpper();
+            tbR2.Text = Convert.ToString(RG[2], 16).PadLeft(4, '0').ToUpper();
+            tbR3.Text = Convert.ToString(RG[3], 16).PadLeft(4, '0').ToUpper();
+            tbR4.Text = Convert.ToString(RG[4], 16).PadLeft(4, '0').ToUpper();
+            tbR5.Text = Convert.ToString(RG[5], 16).PadLeft(4, '0').ToUpper();
+            tbR6.Text = Convert.ToString(RG[6], 16).PadLeft(4, '0').ToUpper();
+            tbR7.Text = Convert.ToString(RG[7], 16).PadLeft(4, '0').ToUpper();
+            tbR8.Text = Convert.ToString(RG[8], 16).PadLeft(4, '0').ToUpper();
+            tbR9.Text = Convert.ToString(RG[9], 16).PadLeft(4, '0').ToUpper();
+            tbR10.Text = Convert.ToString(RG[10], 16).PadLeft(4, '0').ToUpper();
+            tbR11.Text = Convert.ToString(RG[11], 16).PadLeft(4, '0').ToUpper();
+            tbR12.Text = Convert.ToString(RG[12], 16).PadLeft(4, '0').ToUpper();
+            tbR13.Text = Convert.ToString(RG[13], 16).PadLeft(4, '0').ToUpper();
+            tbR14.Text = Convert.ToString(RG[14], 16).PadLeft(4, '0').ToUpper();
+            tbR15.Text = Convert.ToString(RG[15], 16).PadLeft(4, '0').ToUpper();
+
+
+
+            tbMemoryDisplay.Text = "";
+            string aux1 = "";
+            for (int j = 0; j < 5000; j++)
+            {
+                aux1 += j + ": " + Convert.ToString(MEMORIE[j], 16).PadLeft(4, '0').ToUpper();
+                aux1 += Environment.NewLine;
+
+            }
+            tbMemoryDisplay.Text = aux1;
+            tbMPM.Text = "";
+            aux1 = "";
+            for (int j = 0; j < 173; j++)
+            {
+                aux1 += j + ": " + Convert.ToString(MPM[j], 16).PadLeft(10, '0').ToUpper();
+                aux1 += Environment.NewLine;
+            }
+            tbMPM.Text = aux1;
         }
     }
 }
