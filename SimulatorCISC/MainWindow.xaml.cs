@@ -18,7 +18,7 @@ namespace SimulatorCISC
      
         private void BtnExecute_Click(object sender, RoutedEventArgs e)
         {
-            parseInput();
+            executeASMFile();
             btnDiagram.IsEnabled = true;
         }
 
@@ -28,7 +28,7 @@ namespace SimulatorCISC
             diagramWindow.Show();
         }
 
-        public void parseInput() {
+        public void executeASMFile() {
             tbDisplay.Text = "";
             if (assembler.ParseASMFile()) {
                 foreach (var line in assembler.AsmInstructionLines) {

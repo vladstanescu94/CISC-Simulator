@@ -18,7 +18,6 @@ namespace SimulatorCISC
         public List<List<string>> AsmInstructionLines { get; set; } = new List<List<string>>();
         public List<string> MachineCodeList { get; set; } = new List<string>();
 
-        //load asmInstructionLines with file content
         public bool ParseASMFile() {
             try {
                 AsmInstructionLines.Clear();
@@ -62,9 +61,9 @@ namespace SimulatorCISC
                         string label = element.Remove(element.Length - 1);
                         labelsDictionary.Add(label, labelAddr);
                         labelAddr--;
-                    } else if (element.Contains("(") && (element.First() != '(' || element.Last() != ')')) { //mod adresare indexat
+                    } else if (element.Contains("(") && (element.First() != '(' || element.Last() != ')')) { 
                         labelAddr++;
-                    } else if (IsMAI(element)){ // adresare imediata
+                    } else if (IsMAI(element)){ 
                         labelAddr++;
                     } else if ((element == "JMP" || element == "CALL") && !line.Last().Contains("(")){ //jmp sau call la adresa direct
                         labelAddr++;
@@ -129,7 +128,7 @@ namespace SimulatorCISC
                                 binaryRegAndMA += "00" + "0000";
                                 binaryIndexList.Add(Convert.ToString((Int16)offset, 2).PadLeft(16, '0'));
                             }else {
-                                if (offset < -255 || offset > 255) { throw new Exception("Offset 8 bits out of range!"); }
+                                if (offset < -255 || offset > 255) { throw new Exception("Offset out of range"); }
                                 binaryOffset = Convert.ToString((byte)offset, 2).PadLeft(8, '0');
                             }
                         } else if (element == "END"){

@@ -9,7 +9,6 @@ namespace SimulatorCISC
 {
     class Microinstructions
     {
-        //read all microinstructions and encodings from files 
         public Dictionary<String, String> dbus = new Dictionary<string, string>();
         public Dictionary<String, String> cod_Ram = new Dictionary<string, string>();
         public Dictionary<String, String> destRbus = new Dictionary<string, string>();
