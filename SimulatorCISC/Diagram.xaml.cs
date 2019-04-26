@@ -150,7 +150,7 @@ namespace SimulatorCISC
                     pMEMORY_IRMUX.Stroke = new SolidColorBrush(Colors.Magenta);
                     pIR_MUX.Stroke = new SolidColorBrush(Colors.Magenta);
                     pADR_MEMORY.Stroke = new SolidColorBrush(Colors.Magenta);
-                    //forma
+                     
                     break;
                 case 2://Read
                     MDR = MEMORIE[ADR];
@@ -160,7 +160,7 @@ namespace SimulatorCISC
                     pMUX_MDR.Stroke = new SolidColorBrush(Colors.Magenta);
                     tbMDR.Text = MDR.ToString();
                     tbMDR.Background = new SolidColorBrush(Colors.Magenta);
-                    //forma
+                     
                     break;
                 case 3://write
                     MEMORIE[ADR] = MDR;
@@ -214,7 +214,7 @@ namespace SimulatorCISC
                     pMUX2_FLAG.Stroke = new SolidColorBrush(Colors.Magenta);
                     tbFlag.Text = FLAG.ToString();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
-                    //forma
+                   
                     break;
                 case 3://cin
                     RBUS += 1;
