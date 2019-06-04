@@ -16,6 +16,10 @@
         <Button x:Name="btnOpenFile" Content="OPEN FILE" HorizontalAlignment="Left" Margin="50,547,0,0" VerticalAlignment="Top" Width="262" Click="BtnOpenFile_Click" Cursor="Hand" Background="#FF8C57FF" Foreground="White" BorderBrush="{x:Null}" Height="60" FontSize="28"/>
         <TextBox x:Name="tbBinary" HorizontalAlignment="Left" IsReadOnly="True" Height="474" Margin="702,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="262" BorderBrush="#FF404040" Background="#FFF7F7F7" FontSize="22"/>
         <Label x:Name="label" Content="Binary Code" HorizontalAlignment="Left" Margin="702,10,0,0" VerticalAlignment="Top" Width="172" FontSize="18"/>
+        <Path Data="M320,281 C332,281 344,281 356,281" Fill="Black" HorizontalAlignment="Left" Height="10" Margin="320,281,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="37"/>
+        <Path Data="M355,275 C357.12194,277.16017 359.87148,278.87148 362,281 359.97272,283.02728 357.64638,285.13333 356,287.5" Fill="Black" HorizontalAlignment="Left" Height="13.5" Margin="355,275,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="8"/>
+        <Path Data="M320,281 C332,281 344,281 356,281" Fill="Black" HorizontalAlignment="Left" Height="10" Margin="645,281,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="37"/>
+        <Path Data="M355,275 C357.12194,277.16017 359.87148,278.87148 362,281 359.97272,283.02728 357.64638,285.13333 356,287.5" Fill="Black" HorizontalAlignment="Left" Height="13.5" Margin="680,275,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="8"/>
 
     </Grid>
 </Window>

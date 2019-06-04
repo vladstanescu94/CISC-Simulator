@@ -67,19 +67,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Assembler.cs" />
+    <Compile Include="Clase\Assembler.cs" />
     <Compile Include="Diagram.xaml.cs">
       <DependentUpon>Diagram.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Encodings.cs" />
+    <Compile Include="Clase\Encodings.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Masks.cs" />
-    <Compile Include="Microinstructions.cs" />
+    <Compile Include="Clase\Masks.cs" />
+    <Compile Include="Clase\Microinstructions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

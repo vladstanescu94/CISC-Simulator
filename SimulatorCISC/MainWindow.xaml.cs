@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.IO;
+using System.Linq;
 
 namespace SimulatorCISC
 {
@@ -14,6 +15,7 @@ namespace SimulatorCISC
         {
             InitializeComponent();
             btnDiagram.IsEnabled = false;
+            btnExecute.IsEnabled = false;
         }
      
         private void BtnExecute_Click(object sender, RoutedEventArgs e)
@@ -29,6 +31,7 @@ namespace SimulatorCISC
         }
 
         public void executeASMFile() {
+            //TODO: Change parsing
             tbDisplay.Text = "";
             if (assembler.ParseASMFile()) {
                 foreach (var line in assembler.AsmInstructionLines) {
@@ -73,6 +76,8 @@ namespace SimulatorCISC
                 {
                     assembler.fileName = dlg.FileName;
                     tbCode.Text = File.ReadAllText(dlg.FileName).ToUpper();
+                    Console.Write(tbCode.Text);
+                    btnExecute.IsEnabled = true;
                 }
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);

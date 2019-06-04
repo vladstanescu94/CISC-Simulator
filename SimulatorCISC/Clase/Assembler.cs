@@ -9,7 +9,6 @@ namespace SimulatorCISC
     class Assembler
     {
         Encodings encoding = new Encodings();
-
         public string fileName;
         private Dictionary<string, int> labelsDictionary = new Dictionary<string, int>();
         public short[] binaryMachineCodeArray;
@@ -22,7 +21,6 @@ namespace SimulatorCISC
             try {
                 AsmInstructionLines.Clear();
                 string[] lines = File.ReadAllLines(fileName);
-
                 if (lines.Any()) {
                     foreach(string line in lines){
                         string noCommentsLine = DeleteComments(line.ToUpper());
@@ -73,7 +71,6 @@ namespace SimulatorCISC
             }
         }
 
-        //mod adresare imediat
         private bool IsMAI(string element) => int.TryParse(element, result: out _);
 
         public void GenerateMachineCode() {
