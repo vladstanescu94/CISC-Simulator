@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows;
 using System.IO;
-using System.Linq;
 
 namespace SimulatorCISC
 {

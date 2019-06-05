@@ -52,7 +52,7 @@
         <Path x:Name="pDBUS" Data="M908,34 L908,424" HorizontalAlignment="Left" Height="476" Margin="958,48,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="4" VerticalAlignment="Top" Width="4"/>
         <Rectangle x:Name="rectMemory" HorizontalAlignment="Left" Height="84" Margin="1032,474,0,0" Stroke="Black" VerticalAlignment="Top" Width="116"/>
         <TextBox x:Name="tbFlag" HorizontalAlignment="Left" Height="23" Margin="1028,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tbRG" HorizontalAlignment="Left" Height="22" Margin="1028,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbRG" HorizontalAlignment="Left" Height="38" Margin="1030,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="tbSP" HorizontalAlignment="Left" Height="22" Margin="1028,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="tbT" HorizontalAlignment="Left" Height="22" Margin="1028,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="tbPC" HorizontalAlignment="Left" Height="22" Margin="1028,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -74,8 +74,8 @@
         <Label x:Name="lblMUX" Content="MUX" HorizontalAlignment="Left" Margin="1228,455,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblMUX2" Content="MUX" HorizontalAlignment="Left" Margin="1219,153,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblFlag" Content="FLAG" HorizontalAlignment="Left" Margin="1028,138,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
-        <Label x:Name="lblRG" Content="RG" HorizontalAlignment="Left" Margin="1028,177,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
-        <Label x:Name="lblSP" Content="SP" HorizontalAlignment="Left" Margin="1028,211,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
+        <Label x:Name="lblRG" Content="RG" HorizontalAlignment="Left" Margin="1010,178,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
+        <Label x:Name="lblSP" Content="SP" HorizontalAlignment="Left" Margin="1014,213,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
         <Label x:Name="lblT" Content="T" HorizontalAlignment="Left" Margin="1028,249,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
         <Label x:Name="lblPC" Content="PC" HorizontalAlignment="Left" Margin="1028,288,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>
         <Label x:Name="lblIVR" Content="IVR" HorizontalAlignment="Left" Margin="1028,324,0,0" VerticalAlignment="Top" Height="19" FontSize="8"/>

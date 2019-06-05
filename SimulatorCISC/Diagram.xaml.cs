@@ -12,6 +12,18 @@ namespace SimulatorCISC
     /// </summary>
     public partial class Diagram : Window
     {
+        private enum DisplayState
+        {
+            DEC = 10,
+            BIN = 2,
+            HEX = 16
+        };
+        private enum DisplayPad
+        {
+            DEC = 0,
+            BIN = 16,
+            HEX = 4
+        };
         short[] codBinar;
         private static Int16[] MEMORIE = new Int16[65536];
         private Int16 IR;
@@ -38,11 +50,13 @@ namespace SimulatorCISC
         private UInt16 ultimaAdresaMemorie;
         private bool instructiuneFinalizata = false;
         private List<TextBox> registersTBList = new List<TextBox>();
+        
 
         Microinstructions dictionarMicroprogram;
+        DisplayState ds = DisplayState.DEC;
+        DisplayPad dp = DisplayPad.DEC;
 
-        public Diagram(short[] code)
-        {
+        public Diagram(short[] code) {
             InitializeComponent();
             GenerateRegistersList();
             Initializare(code);
@@ -452,7 +466,7 @@ namespace SimulatorCISC
                     pIVR_SBUS.Stroke = new SolidColorBrush(Colors.Magenta);
 
                     INTR = 0;
-                    tbIVR.Text = INTR.ToString();
+                    tbIVR.Text = Convert.ToString(INTR,(int)ds).PadLeft((int)dp, '0').ToUpper();
                     return (short)IVR;
                 case 6:
                     pSBUS.Stroke = new SolidColorBrush(Colors.Magenta);
@@ -491,7 +505,7 @@ namespace SimulatorCISC
 
                     indexRS = (IR & 0x03c0) >> 6;
 
-                    tbRG.Text = "R" + indexRS + ": " + RG[indexRS].ToString();
+                    tbRG.Text = "R" + indexRS + ": " + Convert.ToString(RG[indexRS],(int)ds).PadLeft((int)dp, '0').ToUpper();
                     registersTBList[indexRS].Background = new SolidColorBrush(Colors.Magenta);
 
                     return RG[indexRS];
@@ -502,7 +516,7 @@ namespace SimulatorCISC
 
                     indexRS = (IR & 0x03c0) >> 6;
 
-                    tbRG.Text = "nR" + indexRS + ": " + (~RG[indexRS]).ToString();
+                    tbRG.Text = "nR" + indexRS + ": " + Convert.ToString((~RG[indexRS]),(int)ds).PadLeft((int)dp, '0').ToUpper();
                     registersTBList[indexRS].Background = new SolidColorBrush(Colors.Magenta);
 
                     return (short)(~RG[indexRS]);
@@ -571,7 +585,7 @@ namespace SimulatorCISC
 
                     INTR = 0;
 
-                    tbIVR.Text = INTR.ToString();
+                    tbIVR.Text = Convert.ToString(INTR,(int)ds).PadLeft((int)dp, '0').ToUpper();
 
                     return (short)IVR;
                 case 6:
@@ -611,7 +625,7 @@ namespace SimulatorCISC
 
                     indexRD = IR & 0x000F;
 
-                    tbRG.Text = "R" + indexRD + ": " + RG[indexRD].ToString();
+                    tbRG.Text = "R" + indexRD + ": " + Convert.ToString(RG[indexRD],(int)ds).PadLeft((int)dp, '0').ToUpper();
                     registersTBList[indexRD].Background = new SolidColorBrush(Colors.Magenta);
 
                     return RG[indexRD];
@@ -622,7 +636,7 @@ namespace SimulatorCISC
 
                     indexRD = IR & 0x000F;
 
-                    tbRG.Text = "nR" + indexRD + ": " + (~RG[indexRD]).ToString();
+                    tbRG.Text = "nR" + indexRD + ": " + Convert.ToString((~RG[indexRD]),(int)ds).PadLeft((int)dp, '0').ToUpper();
                     registersTBList[indexRD].Background = new SolidColorBrush(Colors.Magenta);
 
                     return (short)(~RG[indexRD]);
@@ -774,7 +788,7 @@ namespace SimulatorCISC
                     pALU_MUX2.Stroke = new SolidColorBrush(Colors.Magenta);
                     //pRBUS_MUX2.Stroke = new SolidColorBrush(Colors.Magenta);
                     pMUX2_FLAG.Stroke = new SolidColorBrush(Colors.Magenta);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG,(int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 2://PdCOND
@@ -783,7 +797,7 @@ namespace SimulatorCISC
                     pALU_MUX2.Stroke = new SolidColorBrush(Colors.Magenta);
                     //pRBUS_MUX2.Stroke = new SolidColorBrush(Colors.Magenta);
                     pMUX2_FLAG.Stroke = new SolidColorBrush(Colors.Magenta);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG,(int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
 
                     break;
@@ -798,22 +812,22 @@ namespace SimulatorCISC
                     pALU_MUX2.Stroke = new SolidColorBrush(Colors.Magenta);
                     //pRBUS_MUX2.Stroke = new SolidColorBrush(Colors.Magenta);
                     pMUX2_FLAG.Stroke = new SolidColorBrush(Colors.Magenta);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 4://+1SP
                     SP += 1;
-                    tbSP.Text = SP.ToString();
+                    tbSP.Text = Convert.ToString(SP, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbSP.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 5://-1SP
                     SP -= 1;
-                    tbSP.Text = SP.ToString();
+                    tbSP.Text = Convert.ToString(SP, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbSP.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 6://+1PC
                     PC += 1;
-                    tbPC.Text = PC.ToString();
+                    tbPC.Text = Convert.ToString(PC, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbPC.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 7://A(1)BVI
@@ -828,61 +842,61 @@ namespace SimulatorCISC
                 case 10://A(1)C
                     C = 1;
                     FLAG = (ushort)(FLAG | (ushort)C << 3);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 11://A(1)V
                     V = 1;
                     FLAG = (ushort)(FLAG | (ushort)V << 2);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 12://A(1)Z
                     Z = 1;
                     FLAG = (ushort)(FLAG | (ushort)Z << 1);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 13://A(1)S
                     S = 1;
                     FLAG = (ushort)(FLAG | (ushort)S);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 14://A(1)CVZS
                     C = 1; V = 1; Z = 1; S = 1;
                     FLAG = (ushort)(FLAG | 0x000F);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 15://A(0)C
                     C = 0;
                     FLAG = (ushort)(FLAG & 0xFFF7);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 16://A(0)V
                     V = 0;
                     FLAG = (ushort)(FLAG & 0xFFFB);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 17://A(0)Z
                     Z = 0;
                     FLAG = (ushort)(FLAG & 0xFFFD);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 18://A(0)S
                     S = 0;
                     FLAG = (ushort)(FLAG & 0xFFFE);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 19://A(0)CVZS
                     C = 0; V = 0; Z = 0; S = 0;
                     FLAG = (ushort)(FLAG & 0xFFF0);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
             }
@@ -904,47 +918,47 @@ namespace SimulatorCISC
 
                 case 1://PmIR
                     IR = (short)rBUS;
-                    tbIR.Text = IR.ToString();
+                    tbIR.Text = Convert.ToString(IR, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbIR.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 2://PmT
                     T = rBUS;
                     pRBUS_T.Stroke = new SolidColorBrush(Colors.Magenta);
-                    tbT.Text = T.ToString();
+                    tbT.Text = Convert.ToString(T, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbT.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 3://PmSp
                     SP = (ushort)rBUS;
                     pRBUS_SP.Stroke = new SolidColorBrush(Colors.Magenta);
-                    tbSP.Text = SP.ToString();
+                    tbSP.Text = Convert.ToString(SP, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbSP.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 4: //PmMDR
                     MDR = rBUS;
                     pRBUS_MUX.Stroke = new SolidColorBrush(Colors.Magenta);
                     pMUX_MDR.Stroke = new SolidColorBrush(Colors.Magenta);
-                    tbMDR.Text = MDR.ToString();
+                    tbMDR.Text = Convert.ToString(MDR, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbMDR.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 5://PmRG
                     indexRG = IR & 0x000F;
                     RG[indexRG] = rBUS;
                     pRBUS_RG.Stroke = new SolidColorBrush(Colors.Magenta);
-                    tbRG.Text = "R" + indexRG + ": " + RG[indexRG].ToString();
+                    tbRG.Text = "R" + indexRG + ": " + Convert.ToString(RG[indexRG], (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbRG.Background = new SolidColorBrush(Colors.Magenta);
                     registersTBList[indexRG].Background = new SolidColorBrush(Colors.Magenta);
-                    registersTBList[indexRG].Text = RG[indexRG].ToString();
+                    registersTBList[indexRG].Text = Convert.ToString(RG[indexRG], (int)ds).PadLeft((int)dp, '0').ToUpper();
                     break;
                 case 6://PmPC
                     PC = (ushort)rBUS;
                     pRBUS_PC.Stroke = new SolidColorBrush(Colors.Magenta);
-                    tbPC.Text = PC.ToString();
+                    tbPC.Text = Convert.ToString(PC, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbPC.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 7://PmADR
                     ADR = (ushort)rBUS;
                     pRBUS_ADR.Stroke = new SolidColorBrush(Colors.Magenta);
-                    tbADR.Text = ADR.ToString();
+                    tbADR.Text = Convert.ToString(ADR, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbADR.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 case 8://PmFLAG
@@ -955,7 +969,7 @@ namespace SimulatorCISC
                     S = (ushort)((FLAG & 0x0001));
                     pRBUS_MUX2.Stroke = new SolidColorBrush(Colors.Magenta);
                     pMUX2_FLAG.Stroke = new SolidColorBrush(Colors.Magenta);
-                    tbFlag.Text = FLAG.ToString();
+                    tbFlag.Text = Convert.ToString(FLAG, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbFlag.Background = new SolidColorBrush(Colors.Magenta);
                     break;
                 default:
@@ -973,7 +987,7 @@ namespace SimulatorCISC
                     break;
                 case 1: //IFCH
                     IR = (Int16)MEMORIE[ADR];
-                    tbIR.Text = IR.ToString();
+                    tbIR.Text = Convert.ToString(IR, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbIR.Background = new SolidColorBrush(Colors.Magenta);
                     pMEMORY_IRMUX.Stroke = new SolidColorBrush(Colors.Magenta);
                     pIR_MUX.Stroke = new SolidColorBrush(Colors.Magenta);
@@ -986,7 +1000,7 @@ namespace SimulatorCISC
                     pIR_MUX.Stroke = new SolidColorBrush(Colors.Magenta);
                     pADR_MEMORY.Stroke = new SolidColorBrush(Colors.Magenta);
                     pMUX_MDR.Stroke = new SolidColorBrush(Colors.Magenta);
-                    tbMDR.Text = MDR.ToString();
+                    tbMDR.Text = Convert.ToString(MDR, (int)ds).PadLeft((int)dp, '0').ToUpper();
                     tbMDR.Background = new SolidColorBrush(Colors.Magenta);
                      
                     break;
@@ -998,7 +1012,7 @@ namespace SimulatorCISC
                     string aux = "";
                     for (int i = 0; i < 5000; i++)
                     {
-                        aux += i + ": " + MEMORIE[i].ToString();
+                        aux += i + ": " + Convert.ToString(MEMORIE[i], (int)ds).PadLeft((int)dp, '0').ToUpper();
                         aux += Environment.NewLine;
 
                     }
@@ -1122,6 +1136,8 @@ namespace SimulatorCISC
         //TODO : need to change conversions
         private void BtnViewHex_Click(object sender, RoutedEventArgs e)
         {
+            ds = DisplayState.HEX;
+            dp = DisplayPad.HEX;
             tbPC.Text = Convert.ToString(PC, 16).PadLeft(4, '0').ToUpper();
             tbIR.Text = Convert.ToString(IR, 16).PadLeft(4, '0').ToUpper();
             tbFlag.Text = Convert.ToString(FLAG, 16).PadLeft(4, '0').ToUpper();
@@ -1166,6 +1182,8 @@ namespace SimulatorCISC
         }
         private void BtnViewBinary_Click(object sender, RoutedEventArgs e)
         {
+            ds = DisplayState.BIN;
+            dp = DisplayPad.BIN;
             tbPC.Text = Convert.ToString(PC, 2).PadLeft(16, '0');
             tbIR.Text = Convert.ToString(IR, 2).PadLeft(16, '0');
             tbFlag.Text = Convert.ToString(FLAG, 2).PadLeft(16, '0');
@@ -1210,6 +1228,8 @@ namespace SimulatorCISC
         }
         private void BtnViewDecimal_Click(object sender, RoutedEventArgs e)
         {
+            ds = DisplayState.DEC;
+            dp = DisplayPad.DEC;
             tbPC.Text = PC.ToString();
             tbIR.Text = IR.ToString();
             tbFlag.Text = FLAG.ToString();
