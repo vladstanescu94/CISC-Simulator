@@ -155,8 +155,14 @@ namespace SimulatorCISC
                     break;
                 case 1:
                     g = GetGeneralInstruction(MIR);
-                    if (g == 0) { MAR++; }
-                    else { MAR = (byte)(GetMicroAddress(MIR) + GetIndex(MIR)); }
+
+                    if (g == 0) {
+                        MAR++;
+                    }
+                    else {
+                        MAR = (byte)(GetMicroAddress(MIR) + GetIndex(MIR));
+                    }
+
                     SBUS = GetSbus(MIR);
                     DBUS = GetDbus(MIR);
                     RBUS = ExecuteALU(MIR, SBUS, DBUS);

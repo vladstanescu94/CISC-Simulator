@@ -55,11 +55,13 @@ namespace SimulatorCISC
         }
 
         private void writeBinaryFile(){
-            string binaryFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\", @"Output\result.bin"));
+            string binaryFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\", @"Output\binaryOutput.bin"));
             try
             {
                 assembler.WriteBinaryFile(binaryFilePath);
-            }catch (Exception e) {
+                MessageBox.Show("BIN file generated!", "Message", MessageBoxButton.OK);
+            }
+            catch (Exception e) {
                 MessageBox.Show(e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -76,7 +78,6 @@ namespace SimulatorCISC
                 {
                     assembler.fileName = dlg.FileName;
                     tbCode.Text = File.ReadAllText(dlg.FileName).ToUpper();
-                    Console.Write(tbCode.Text);
                     btnExecute.IsEnabled = true;
                 }
             } catch (Exception ex) {

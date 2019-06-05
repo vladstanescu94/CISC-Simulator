@@ -126,7 +126,7 @@
         <Label x:Name="lblSBUS_Display" Content="SBUS" HorizontalAlignment="Left" Margin="35,35,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblDBUS_Display" Content="DBUS" HorizontalAlignment="Left" Margin="87,35,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblALU_Display" Content="ALU" HorizontalAlignment="Left" Margin="132,35,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblRBUS_Display" Content="RBUS" HorizontalAlignment="Left" Margin="184,35,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblRBUS_Display" Content="RBUS" HorizontalAlignment="Left" Margin="172,35,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblOtherOP" Content="OTHER OPS" HorizontalAlignment="Left" Margin="228,35,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblMEM_OPS" Content="MEMORY OPS" HorizontalAlignment="Left" Margin="300,35,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblF" Content="f" HorizontalAlignment="Left" Margin="391,35,0,0" VerticalAlignment="Top" Width="24"/>
@@ -136,7 +136,7 @@
         <Label x:Name="lblSBUS_Content" Content="" HorizontalAlignment="Left" Margin="35,58,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblDBUS_Content" Content="" HorizontalAlignment="Left" Margin="87,58,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblALU_Content" Content="" HorizontalAlignment="Left" Margin="132,58,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblRBUS_Content" Content="" HorizontalAlignment="Left" Margin="184,58,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblRBUS_Content" Content="" HorizontalAlignment="Left" Margin="172,58,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblOTHER_OP_Content" Content="" HorizontalAlignment="Left" Margin="228,58,0,0" VerticalAlignment="Top" Width="67"/>
         <Label x:Name="lblMEMORY_OPS_Content" Content="" HorizontalAlignment="Left" Margin="300,58,0,0" VerticalAlignment="Top" Width="78"/>
         <Label x:Name="lblF_Content" Content="" HorizontalAlignment="Left" Margin="383,58,0,0" VerticalAlignment="Top"/>

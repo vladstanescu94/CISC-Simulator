@@ -4,7 +4,7 @@ namespace SimulatorCISC
 {
     class Masks
     {
-        public const int ADR_START_MEMORIE = 30;
+        public const int ADR_START_MEMORIE = 50;
 
         public enum Mask : long
         {

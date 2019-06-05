@@ -96,18 +96,18 @@ namespace SimulatorCISC
 
                     foreach (string element in line) {
                         //check if instruction
-                        if (encoding.instructionDictionary.ContainsKey(element)){
-                            binaryOpCode = encoding.instructionDictionary[element];
-                        } else if (encoding.registerDictionary.ContainsKey(element)){ // check if is register (adresare directa)
-                            binaryRegAndMA += "01" + encoding.registerDictionary[element];
+                        if (encoding.insDictionary.ContainsKey(element)){
+                            binaryOpCode = encoding.insDictionary[element];
+                        } else if (encoding.regDictionary.ContainsKey(element)){ // check if is register (adresare directa)
+                            binaryRegAndMA += "01" + encoding.regDictionary[element];
                         } else if (element.Contains("("))  { // register AI
                             string[] items = element.Split('(', ')').Where(x => x != "").ToArray();
                             if(items.Count() == 1){
-                                binaryRegAndMA += "10" + encoding.registerDictionary[items[0]];
+                                binaryRegAndMA += "10" + encoding.regDictionary[items[0]];
                             } else {
                                 foreach (var item in items){
-                                    if (encoding.registerDictionary.ContainsKey(item)){
-                                        binaryRegAndMA += "11" + encoding.registerDictionary[item];
+                                    if (encoding.regDictionary.ContainsKey(item)){
+                                        binaryRegAndMA += "11" + encoding.regDictionary[item];
                                     } else {
                                         binaryIndexList.Add(Convert.ToString(Convert.ToUInt16(item), 2).PadLeft(16, '0'));
                                     }
