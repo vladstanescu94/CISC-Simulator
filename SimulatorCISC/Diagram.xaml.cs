@@ -24,6 +24,12 @@ namespace SimulatorCISC
             BIN = 16,
             HEX = 4
         };
+
+        DisplayState ds = DisplayState.DEC;
+        DisplayPad dp = DisplayPad.DEC;
+
+        private List<TextBox> registersTBList = new List<TextBox>();
+
         short[] codBinar;
         private static Int16[] MEMORIE = new Int16[65536];
         private Int16 IR;
@@ -49,12 +55,11 @@ namespace SimulatorCISC
         private byte BVI, BPO;
         private UInt16 ultimaAdresaMemorie;
         private bool instructiuneFinalizata = false;
-        private List<TextBox> registersTBList = new List<TextBox>();
+        
         
 
         Microinstructions dictionarMicroprogram;
-        DisplayState ds = DisplayState.DEC;
-        DisplayPad dp = DisplayPad.DEC;
+        
 
         public Diagram(short[] code) {
             InitializeComponent();
@@ -168,7 +173,7 @@ namespace SimulatorCISC
                     state = 1;
                     break;
                 case 1:
-                    g = GetGeneralInstruction(MIR);
+                    g = GetG(MIR);
 
                     if (g == 0) {
                         MAR++;
@@ -341,7 +346,7 @@ namespace SimulatorCISC
             }
         }
 
-        private byte GetGeneralInstruction(long mIR)
+        private byte GetG(long mIR)
         {
             return (byte)(GetF(mIR) ^ GetNTF(mIR));
         }
@@ -717,12 +722,12 @@ namespace SimulatorCISC
 
                     return (short)rez;
                 case 9://asl
-                    C = (ushort)((dBUS * 0x8000) >> 15);
+                    C = (ushort)((dBUS & 0x8000) >> 15);
                     flags = (C << 3) | (V << 2) | (Z << 1) | (S << 0);
                     FLAG = (ushort)((FLAG & 0) | (ushort)flags);
                     return (short)(dBUS << 1);
                 case 10://asr
-                    C = (ushort)(dBUS * 0x0001);
+                    C = (ushort)(dBUS & 0x0001);
                     flags = (C << 3) | (V << 2) | (Z << 1) | (S << 0);
                     FLAG = (ushort)((FLAG & 0) | (ushort)flags);
                     rez = dBUS & 0x8000; //msb
@@ -1082,7 +1087,7 @@ namespace SimulatorCISC
                 case 1:
                     if (stepCounter == 0)
                     {
-                        g = GetGeneralInstruction(MIR);
+                        g = GetG(MIR);
                         if (g == 0) { MAR++; }
                         else { MAR = (byte)(GetMicroAddress(MIR) + GetIndex(MIR)); }
                     }
@@ -1125,15 +1130,21 @@ namespace SimulatorCISC
             }
         }
 
+        private void BtnRunAll_Click(object sender, RoutedEventArgs e)
+        {
+            while (PC <= ultimaAdresaMemorie) {
+                Seq();
+            }
+            MessageBox.Show("Simulation Done!", "Message", MessageBoxButton.OK);
+            return;
+        }
+
         private void BtnINTR_Click(object sender, RoutedEventArgs e)
         {
             INTR = 1;
         }
 
         
-
-
-        //TODO : need to change conversions
         private void BtnViewHex_Click(object sender, RoutedEventArgs e)
         {
             ds = DisplayState.HEX;

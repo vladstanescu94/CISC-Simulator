@@ -53,21 +53,37 @@ namespace SimulatorCISC
         //etichete
         private void GetLabels(){
             int labelAddr= 0;
-            foreach (var line in AsmInstructionLines) {
-                foreach (var element in line) {
-                    if (element.Contains(":")) {
-                        string label = element.Remove(element.Length - 1);
-                        labelsDictionary.Add(label, labelAddr);
-                        labelAddr--;
-                    } else if (element.Contains("(") && (element.First() != '(' || element.Last() != ')')) { 
-                        labelAddr++;
-                    } else if (IsMAI(element)){ 
-                        labelAddr++;
-                    } else if ((element == "JMP" || element == "CALL") && !line.Last().Contains("(")){ //jmp sau call la adresa direct
-                        labelAddr++;
+            try
+            {
+                foreach (var line in AsmInstructionLines)
+                {
+                    foreach (var element in line)
+                    {
+                        if (element.Contains(":"))
+                        {
+                            string label = element.Remove(element.Length - 1);
+                            labelsDictionary.Add(label, labelAddr);
+                            labelAddr--;
+                        }
+                        else if (element.Contains("(") && (element.First() != '(' || element.Last() != ')'))
+                        {
+                            labelAddr++;
+                        }
+                        else if (IsMAI(element))
+                        {
+                            labelAddr++;
+                        }
+                        else if ((element == "JMP" || element == "CALL") && !line.Last().Contains("("))
+                        { //jmp sau call la adresa direct
+                            labelAddr++;
+                        }
                     }
+                    labelAddr++;
                 }
-                labelAddr++;
+            }
+            catch (Exception e) {
+                MessageBox.Show(e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
         }
 
