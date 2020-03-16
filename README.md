@@ -1,7 +1,7 @@
 <h3 align="center">CISC Simulator</h3>
 <p align="center">
- <img width=400px height=300px src="https://i.postimg.cc/0Q5gCcS9/simulatorcisc1.jpg" alt="Project logo">
- <img width=400px height=300px src="https://i.postimg.cc/rsCQYk2b/simulatorcisc2.jpg" alt="Project logo">
+ <img width=400px height=300px src="https://i.postimg.cc/0Q5gCcS9/simulatorcisc1.jpg" alt="Project Screenshot">
+ <img width=400px height=300px src="https://i.postimg.cc/rsCQYk2b/simulatorcisc2.jpg" alt="Project Screenshot">
 </p>
 
 <div align="center">
